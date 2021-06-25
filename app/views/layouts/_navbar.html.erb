@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <%= link_to "Cinema Alert", root_path, class: "navbar-brand" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,8 +10,11 @@
           <a class="nav-link active" aria-current="page" href="#">Cinemas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Movies</a>
+          <%= link_to "Movies", movies_path, class: "nav-link" %>
         </li>
+      </ul>
+
+      <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
           <li class="nav-item">
             <a class="nav-link" href="#">Your book seat</a>
@@ -24,10 +27,10 @@
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-danger logout-button" %>
           </li>
         <% else %>
-          <li class="nav-item">
+          <li class="nav-item my-2 my-lg-0">
             <%= link_to "LOGIN", new_user_session_path, class: "nav-link btn btn-primary" %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item my-2 my-lg-0">
             <%= link_to "REGISTER", new_user_registration_path, class: "nav-link btn btn-warning" %>
           </li>
         <% end %>
