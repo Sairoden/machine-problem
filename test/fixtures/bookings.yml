@@ -3,7 +3,11 @@
 one:
   user: one
   movie: one
+  seat_number: 1
+  time_slots: 1
 
 two:
   user: two
   movie: two
+  seat_number: 1
+  time_slots: 1

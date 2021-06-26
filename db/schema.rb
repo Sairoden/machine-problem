@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_26_070954) do
+ActiveRecord::Schema.define(version: 2021_06_26_122654) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -21,6 +21,21 @@ ActiveRecord::Schema.define(version: 2021_06_26_070954) do
     t.integer "time_slots"
     t.index ["movie_id"], name: "index_bookings_on_movie_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "cinema_movies", force: :cascade do |t|
+    t.integer "movie_id", null: false
+    t.integer "cinema_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cinema_id"], name: "index_cinema_movies_on_cinema_id"
+    t.index ["movie_id"], name: "index_cinema_movies_on_movie_id"
+  end
+
+  create_table "cinemas", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "movies", force: :cascade do |t|
@@ -49,4 +64,6 @@ ActiveRecord::Schema.define(version: 2021_06_26_070954) do
 
   add_foreign_key "bookings", "movies"
   add_foreign_key "bookings", "users"
+  add_foreign_key "cinema_movies", "cinemas"
+  add_foreign_key "cinema_movies", "movies"
 end

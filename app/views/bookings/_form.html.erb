@@ -1,112 +1,114 @@
 <div class="container">
+  <%= form_with(model: booking) do |form| %>
+    <% if booking.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
 
-  <%= form_for(@booking, :html => {class: "form-horizontal", role: "form"}) do |f| %>
-  <div class="form-group row">
-    <div class="form-check form-check-inline">
-      <div class="center theatre">
-
-      <div class="screen"></div>
-
-      <div class="row">
-        <div class="seat">
-          <%= radio_button_tag(:seat_number, 1) %>
-          <%= label_tag(:seat_number_1, "Seat 1", style: "color: white") %>
-        </div>    
+        <ul>
+          <% booking.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
       </div>
+    <% end %>
+    <div class="form-group row">
+    
+      <div class="form-check form-check-inline">
+        <div class="center theatre">
 
-      <div class="row">
-        <div class="seat">
-          <%= radio_button_tag(:seat_number, 2) %>
-          <%= label_tag(:seat_number_2, "Seat 2", style: "color: white") %>
-        </div>    
-      </div>
+        <div class="screen"></div>
 
-      <div class="row">
-        <div class="seat">
-          <%= radio_button_tag(:seat_number, 3) %>
-          <%= label_tag(:seat_number_3, "Seat 3", style: "color: white") %>
-        </div>    
-      </div>
+        <div class="row">
+          <div class="seat">
+            <%= radio_button_tag(:seat_number, 1) %>
+            <%= label_tag(:seat_number_1, "Seat 1", style: "color: white") %>
+          </div>    
+        </div>
 
-      <div class="row">
-        <div class="seat">
-          <%= radio_button_tag(:seat_number, 4) %>
-          <%= label_tag(:seat_number_4, "Seat 4", style: "color: white") %>
-        </div>    
-      </div>
+        <div class="row">
+          <div class="seat">
+            <%= radio_button_tag(:seat_number, 2) %>
+            <%= label_tag(:seat_number_2, "Seat 2", style: "color: white") %>
+          </div>    
+        </div>
 
-      <div class="row">
-        <div class="seat">
-          <%= radio_button_tag(:seat_number, 5) %>
-          <%= label_tag(:seat_number_5, "Seat 5", style: "color: white") %>
-        </div>    
-      </div>
+        <div class="row">
+          <div class="seat">
+            <%= radio_button_tag(:seat_number, 3) %>
+            <%= label_tag(:seat_number_3, "Seat 3", style: "color: white") %>
+          </div>    
+        </div>
 
-      <div class="row">
-        <div class="seat">
-          <%= radio_button_tag(:seat_number, 6) %>
-          <%= label_tag(:seat_number_6, "Seat 6", style: "color: white") %>
-        </div>    
-      </div>
-      <div class="row">
-        <div class="seat">
-          <%= radio_button_tag(:seat_number, 7) %>
-          <%= label_tag(:seat_number_7, "Seat 7", style: "color: white") %>
-        </div>    
-      </div>
-      
-      <div class="row">
-        <div class="seat">
-          <%= radio_button_tag(:seat_number, 8) %>
-          <%= label_tag(:seat_number_8, "Seat 8", style: "color: white") %>
-        </div>    
-      </div>
+        <div class="row">
+          <div class="seat">
+            <%= radio_button_tag(:seat_number, 4) %>
+            <%= label_tag(:seat_number_4, "Seat 4", style: "color: white") %>
+          </div>    
+        </div>
 
-      <div class="row">
-        <div class="seat">
-          <%= radio_button_tag(:seat_number, 9) %>
-          <%= label_tag(:seat_number_9, "Seat 9", style: "color: white") %>
-        </div>    
-      </div>
+        <div class="row">
+          <div class="seat">
+            <%= radio_button_tag(:seat_number, 5) %>
+            <%= label_tag(:seat_number_5, "Seat 5", style: "color: white") %>
+          </div>    
+        </div>
 
-      <div class="row">
-        <div class="seat">
-          <%= radio_button_tag(:seat_number, 10) %>
-          <%= label_tag(:seat_number_10, "Seat 10", style: "color: white") %>
-        </div>    
-      </div>
-  
-    </div>
-  </div>
+        <div class="row">
+          <div class="seat">
+            <%= radio_button_tag(:seat_number, 6) %>
+            <%= label_tag(:seat_number_6, "Seat 6", style: "color: white") %>
+          </div>    
+        </div>
+        <div class="row">
+          <div class="seat">
+            <%= radio_button_tag(:seat_number, 7) %>
+            <%= label_tag(:seat_number_7, "Seat 7", style: "color: white") %>
+          </div>    
+        </div>
+        
+        <div class="row">
+          <div class="seat">
+            <%= radio_button_tag(:seat_number, 8) %>
+            <%= label_tag(:seat_number_8, "Seat 8", style: "color: white") %>
+          </div>    
+        </div>
 
-  <div class="form-group row">
-  <h4 align="center">Select your time</h4>
+        <div class="row">
+          <div class="seat">
+            <%= radio_button_tag(:seat_number, 9) %>
+            <%= label_tag(:seat_number_9, "Seat 9", style: "color: white") %>
+          </div>    
+        </div>
 
-    <div class="form-check form-check-inline">
-      <div class="center">
-          <%= radio_button_tag(:time_slots, 10) %>
-          <%= label_tag(:time_slots_10, "10 am") %>
-
-          <%= radio_button_tag(:time_slots, 2) %>
-          <%= label_tag(:time_slots_10, "2 pm") %>
-
-          <%= radio_button_tag(:time_slots, 6) %>
-          <%= label_tag(:time_slots_10, "6 pm") %>
-
-          <%= radio_button_tag(:time_slots, 10) %>
-          <%= label_tag(:time_slots_10, "10 pm") %>
-
+        <div class="row">
+          <div class="seat">
+            <%= radio_button_tag(:seat_number, 10) %>
+            <%= label_tag(:seat_number_10, "Seat 10", style: "color: white") %>
+          </div>    
+        </div>
       </div>
     </div>
-  </div>
 
     <div class="form-group row">
-      <div class="offset-md-2 col-sm-10">
-        <%= f.submit class: "btn btn-primary btn-lg" %>
+      <h4 align="center">Select your time</h4>
+
+      <div class="form-check form-check-inline">
+        <div class="center">
+          <%= radio_button_tag(:time_slots, 10) %>
+          <%= label_tag(:time_slots_10, "10 am") %>
+          <%= radio_button_tag(:time_slots, 2) %>
+          <%= label_tag(:time_slots_10, "2 pm") %>
+          <%= radio_button_tag(:time_slots, 6) %>
+          <%= label_tag(:time_slots_10, "6 pm") %>
+          <%= radio_button_tag(:time_slots, 10) %>
+          <%= label_tag(:time_slots_10, "10 pm") %>
+        </div>
       </div>
     </div>
+
+    <div class="actions">
+      <%= form.submit class: "btn btn-success"  %>
+    </div>
   <% end %>
-
-
-
 </div>
+

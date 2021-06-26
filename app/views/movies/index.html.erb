@@ -2,29 +2,29 @@
 
 <h1 align="center">Now showing</h1>
 
-  <% @movies.each do |movie| %>
-    <div class="container">
-      <div class="card border-info mb-3" style="max-width: 80rem;">
-        <div class="card-header center" style="text-align: center">
-          <%= link_to movie.title, movie_path(movie) %>
-        </div>
-        <div class="card-body">
-          <p class="card-text">
-            <%= truncate(movie.description, length: 500) %>
-          </p>
-        </div>
-        <small> Length: <%= movie.length %> minutes </small>
+<% @movies.each do |movie| %>
+  <div class="container">
+    <div class="card border-info mb-3" style="max-width: 80rem;">
+      <div class="card-header center" style="text-align: center">
+        <%= link_to movie.title, movie_path(movie) %>
       </div>
-
-     <div class="pt-3">
-        <%= link_to 'Book now', new_booking_path, class: "btn btn-success" %>
-        <% if current_user.admin? %>
-          <%= link_to 'New Movie', new_movie_path, class: "btn btn-primary" %>
-          <%= link_to 'Edit', edit_movie_path(movie), class: "btn btn-warning" %>
-          <%= link_to 'Delete', movie, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
-        <% end %>
-     </div>
-        <br>
-      
+      <div class="card-body">
+        <p class="card-text">
+          <%= truncate(movie.description, length: 500) %>
+        </p>
+      </div>
+      <small> Length: <%= movie.length %> minutes </small>
     </div>
-  <% end %>
+
+    <div class="pt-3">
+      <%= link_to 'Book now', new_booking_path, class: "btn btn-success" %>
+      <% if current_user.admin? %>
+        <%= link_to 'New Movie', new_movie_path, class: "btn btn-primary" %>
+        <%= link_to 'Edit', edit_movie_path(movie), class: "btn btn-warning" %>
+        <%= link_to 'Delete', movie, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+      <% end %>
+    </div>
+      <br>
+    
+  </div>
+<% end %>

@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1 align="center">Our Cinemas</h1>
+
+<% @cinemas.each do |cinema| %>
+  <div class="container">
+    <div class="card border-info mb-3" style="max-width: 80rem;">
+      <div class="card-header center" style="text-align: center">
+        <%= link_to cinema.title, cinema_path(cinema) %>
+      </div>
+      <div class="card-body">
+        <p class="card-text">
+            <%= link_to "Check what's showing in this cinema", new_booking_path, class: "btn btn-success" %>
+        </p>
+      </div>
+    </div>
+
+    <div class="pt-3">
+      <% if current_user.admin? %>
+        <%= link_to 'New Movie', new_cinema_path, class: "btn btn-primary" %>
+        <%= link_to 'Edit', edit_cinema_path(cinema), class: "btn btn-warning" %>
+        <%= link_to 'Delete', cinema, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+      <% end %>
+    </div>
+      <br>
+    
+  </div>
+<% end %>

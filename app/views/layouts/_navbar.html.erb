@@ -3,11 +3,11 @@
     <%= link_to "Central Cinema", root_path, class: "navbar-brand", style: "font-size: 2rem; color: #fff;" %>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link <%= "active" if request.path == "#" %>" style="font-size: 1.5rem; color: #fff; margin-left: 10rem" aria-current="page" href="#">Cinemas</a>
+        <li class="nav-item <%= "text-secondary" if request.path == cinemas_path %>" style="font-size: 1.5rem;  margin-left: 10rem;">
+          <%= link_to "Cinemas", cinemas_path, class: "nav-link", style: "color: #fff" %>
         </li>
 
-        <li class="nav-item mr-5<%= "active" if request.path == movies_path %>" style="font-size: 1.5rem;  margin-left: 10rem;">
+        <li class="nav-item mr-5 <%= "text-secondary" if request.path == movies_path %>" style="font-size: 1.5rem;  margin-left: 10rem;">
           <%= link_to "Movies", movies_path, class: "nav-link", style: "color: #fff" %>
         </li>
 

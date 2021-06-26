@@ -1,34 +1,37 @@
-<%= form_for(@movie, :html => {class: "form-horizontal", role: "form"}) do |f| %>
-  <div class="field form-group">
-    <div class="col-sm-2 col-form-label">
-      <%= f.label :title %>
+<div class="container mt-5">
+  <%= form_for(@movie, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+    <div class="field form-group">
+      <div class="col-sm-2 col-form-label">
+        <%= f.label :title %>
+      </div>
+      <div div class="col-sm-8">
+        <%= f.text_field :title, class: "form-control", placeholder: "Title of movie", autofocus: true, class: "form-control" %>
+      </div>
     </div>
-    <div div class="col-sm-8">
-      <%= f.text_field :title, class: "form-control", placeholder: "Title of movie", autofocus: true, class: "form-control" %>
-    </div>
-  </div>
 
-  <div class="field form-group">
-    <div class="col-sm-2 col-form-label">
-      <%= f.label :length %>
+    <div class="field form-group">
+      <div class="col-sm-2 col-form-label">
+        <%= f.label :length %>
+      </div>
+      <div div class="col-sm-8">
+        <%= f.text_field :length, class: "form-control", placeholder: "Length of movie", class: "form-control" %>
+      </div>
     </div>
-    <div div class="col-sm-8">
-      <%= f.text_field :length, class: "form-control", placeholder: "Length of movie", class: "form-control" %>
-    </div>
-  </div>
 
-  <div class="field form-group">
-    <div class="col-sm-2 col-form-label">
-      <%= f.label :description %>
+    <div class="field form-group">
+      <div class="col-sm-2 col-form-label">
+        <%= f.label :description %>
+      </div>
+      <div div class="col-sm-8">
+        <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Description of movie", class: "form-control" %>
+      </div>
     </div>
-    <div div class="col-sm-8">
-      <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Description of movie", class: "form-control" %>
-    </div>
-  </div>
 
 
-  <div class="field form-group">
-    <%= f.submit class: "btn btn-success" %>
-  </div>
-<% end %>
+    <div class="field form-group">
+        <%= f.submit class: "btn btn-success" %>
+      </div>
+    </div>
+  <% end %>
+</div>
 
