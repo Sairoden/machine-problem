@@ -1,6 +1,10 @@
-<h1>Editing Movie</h1>
+<div class="container mt-5">
+  
+  <h1 align="center" style="margin-bottom: 1rem;">Edit Movie</h1>
 
-<%= render 'form', movie: @movie %>
+  <%= render 'form', movie: @movie %>
 
-<%= link_to 'Show', @movie %> |
-<%= link_to 'Back', movies_path %>
+  <%= link_to 'Show', @movie, class: "btn btn-xs btn-warning" %> |
+  <%= link_to 'Back', movies_path, class: "btn btn-xs btn-danger" %>
+
+</div>

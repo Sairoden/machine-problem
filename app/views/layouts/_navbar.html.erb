@@ -1,40 +1,38 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger" style="height: 5rem;">
   <div class="container-fluid">
-    <%= link_to "Cinema Alert", root_path, class: "navbar-brand" %>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <%= link_to "Central Cinema", root_path, class: "navbar-brand", style: "font-size: 2rem; color: #fff;" %>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Cinemas</a>
+          <a class="nav-link <%= "active" if request.path == "#" %>" style="font-size: 1.5rem; color: #fff; margin-left: 10rem" aria-current="page" href="#">Cinemas</a>
         </li>
-        <li class="nav-item">
-          <%= link_to "Movies", movies_path, class: "nav-link" %>
-        </li>
-      </ul>
 
-      <ul class="navbar-nav ml-auto">
+        <li class="nav-item mr-5<%= "active" if request.path == movies_path %>" style="font-size: 1.5rem;  margin-left: 10rem;">
+          <%= link_to "Movies", movies_path, class: "nav-link", style: "color: #fff" %>
+        </li>
+
         <% if user_signed_in? %>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Your book seat</a>
+          <li class="nav-item" style="font-size: 1.5rem; margin-left: 10rem; ">
+            <a class="nav-link" style="color: #fff" href="#">Your book seat</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" style="font-size: 1.5rem; margin-left: 20rem; margin-top: 9px;" >
             <%= fa_icon "user" %>
             <%= link_to current_user.full_name, edit_user_registration_path %>
           </li>
           <li class="nav-item">
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-danger logout-button" %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-warning", style: "margin-left: 2rem; margin-top: 9px;" %>
           </li>
         <% else %>
-          <li class="nav-item my-2 my-lg-0">
-            <%= link_to "LOGIN", new_user_session_path, class: "nav-link btn btn-primary" %>
+          <li class="nav-item my-2 my-lg-0" style="font-size: 1.5rem; margin-left: 50rem; padding-top: 9px;">
+            <%= link_to "LOGIN", new_user_session_path, class: "nav-link btn btn-success text-dark", style: "color: dark" %>
           </li>
-          <li class="nav-item my-2 my-lg-0">
-            <%= link_to "REGISTER", new_user_registration_path, class: "nav-link btn btn-warning" %>
+          <li class="nav-item my-2 my-lg-0" style="font-size: 1.5rem; margin-left: 2rem; padding-top: 9px;">
+            <%= link_to "REGISTER", new_user_registration_path, class: "nav-link btn btn-warning text-dark", style: "color: dark" %>
           </li>
         <% end %>
+
       </ul>
+
     </div>
   </div>
 </nav>

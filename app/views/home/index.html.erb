@@ -1,2 +1,5 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="center jumbotron">
+  <%= link_to (user_signed_in?? "BOOK NOW!" : "REGISTER NOW!"), new_user_registration_path, class: "btn btn-danger btn-lg btn-xlarge", style:"text-transform: uppercase; 
+      margin-top: 20rem;" %>
+</div>
+
