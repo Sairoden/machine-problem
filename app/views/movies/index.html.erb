@@ -18,11 +18,9 @@
 
     <div class="pt-3">
       <%= link_to 'Book now', new_booking_path, class: "btn btn-success" %>
-      <% if current_user.admin? %>
-        <%= link_to 'New Movie', new_movie_path, class: "btn btn-primary" %>
-        <%= link_to 'Edit', edit_movie_path(movie), class: "btn btn-warning" %>
-        <%= link_to 'Delete', movie, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
-      <% end %>
+      <%= link_to 'New Movie', new_movie_path, class: "btn btn-primary" %>
+      <%= link_to 'Edit', edit_movie_path(movie), class: "btn btn-warning" %>
+      <%= link_to 'Delete', movie, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
     </div>
       <br>
     

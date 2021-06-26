@@ -16,11 +16,9 @@
     </div>
 
     <div class="pt-3">
-      <% if current_user.admin? %>
-        <%= link_to 'New Movie', new_cinema_path, class: "btn btn-primary" %>
-        <%= link_to 'Edit', edit_cinema_path(cinema), class: "btn btn-warning" %>
-        <%= link_to 'Delete', cinema, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
-      <% end %>
+      <%= link_to 'New Movie', new_cinema_path, class: "btn btn-primary" %>
+      <%= link_to 'Edit', edit_cinema_path(cinema), class: "btn btn-warning" %>
+      <%= link_to 'Delete', cinema, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
     </div>
       <br>
     
